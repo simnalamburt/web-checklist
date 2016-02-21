@@ -20,6 +20,10 @@ Web Checklist
 
     서버가 HTML5 문법을 똑바로 지키는지 검사하고, 어떻게 고칠지 알려줍니다.
 
+-   [Mobile Friendly Test](https://www.google.com/webmasters/tools/mobile-friendly) - *Google*
+
+    페이지가 얼마나 모바일 프렌들리한지 알려줍니다.
+
 ### 리스트에 넣고싶은것들
 쓰기 편한 온라인 웹서버 테스터 솔루션 아는것이 있다면
 [추천해주세요!](https://github.com/simnalamburt/web-checklist/issues/new)
