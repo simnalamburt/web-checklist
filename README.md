@@ -17,6 +17,10 @@ Web Checklist
     웹서버 HTTPS 세팅이 똑바로 되어있는지 확인합니다. 점수 규칙이 실용적이지
     못하기때문에, 만점을 받는것보단 **A+**를 내는것에 초점을 맞추셔야 합니다.
 
+    그리고 테스트 결과와 별개로 [HPKP]도 활성화시키면 더욱 안전해집니다.
+
+[HPKP]: https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
+
 -   [Markup Validation](https://validator.w3.org) - *W3C*
 
     서버가 HTML5 문법을 똑바로 지키는지 검사하고, 어떻게 고칠지 알려줍니다.
