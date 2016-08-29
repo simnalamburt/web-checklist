@@ -11,7 +11,8 @@ Web Checklist
     웹서버 속도를 테스트해줍니다. 최적화하는 방법도 같이 알려주기때문에
     유용합니다.
 
--   [SSL Server Test](https://www.ssllabs.com/ssltest) - *Qualys SSL Labs*
+-   [SSL Server Test](https://www.ssllabs.com/ssltest) - *Qualys SSL Labs*<br>
+    [SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) - *Mozilla*
 
     웹서버 HTTPS 세팅이 똑바로 되어있는지 확인합니다. 점수 규칙이 실용적이지
     못하기때문에, 만점을 받는것보단 **A+**를 내는것에 초점을 맞추셔야 합니다.
