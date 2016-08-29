@@ -11,6 +11,11 @@ Web Checklist
     웹서버 속도를 테스트해줍니다. 최적화하는 방법도 같이 알려주기때문에
     유용합니다.
 
+-   [Web Page Test](http://www.webpagetest.org/)
+
+    PageSpeed와 비슷하게 웹서버 성능을 테스트해줍니다. 보다 여러 항목 (First
+    Byte Time, Compress Image, ...) 에 대해 정성적인 결과를 내줍니다.
+
 -   [SSL Server Test](https://www.ssllabs.com/ssltest) - *Qualys SSL Labs*<br>
     [SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) - *Mozilla*
 
