@@ -10,8 +10,14 @@ Web Checklist
 
     웹서버 속도를 테스트해줍니다. 최적화하는 방법도 같이 알려주기때문에
     유용합니다.
+    
+-   [Lighthouse](https://github.com/GoogleChrome/lighthouse) - *Google*
 
--   [Web Page Test](http://www.webpagetest.org/)
+    웹페이지가 얼마나 모던 웹개발의 Best practice를 따라 만들어졌는지
+    자동으로 검사해줍니다. 웹페이지 네트워크 설정, TLS 설정, 웹접근성 등의
+    요소들을 종합적으로 평가해줍니다.
+
+-   [Web Page Test](http://www.webpagetest.org/)
 
     PageSpeed와 비슷하게 웹서버 성능을 테스트해줍니다. 보다 여러 항목 (First
     Byte Time, Compress Image, ...) 에 대해 정성적인 결과를 내줍니다.
