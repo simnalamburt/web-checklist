@@ -10,7 +10,7 @@ Web Checklist
 
     웹서버 속도를 테스트해줍니다. 최적화하는 방법도 같이 알려주기때문에
     유용합니다.
-    
+
 -   [Lighthouse](https://github.com/GoogleChrome/lighthouse) - *Google*
 
     웹페이지가 얼마나 모던 웹개발의 Best practice를 따라 만들어졌는지
