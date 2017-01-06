@@ -17,7 +17,7 @@ Web Checklist
     자동으로 검사해줍니다. 웹페이지 네트워크 설정, TLS 설정, 웹접근성 등의
     요소들을 종합적으로 평가해줍니다.
 
--   [Web Page Test](http://www.webpagetest.org/)
+-   [Web Page Test](http://www.webpagetest.org/)
 
     PageSpeed와 비슷하게 웹서버 성능을 테스트해줍니다. 보다 여러 항목 (First
     Byte Time, Compress Image, ...) 에 대해 정성적인 결과를 내줍니다.
