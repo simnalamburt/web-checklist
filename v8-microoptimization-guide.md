@@ -25,6 +25,10 @@ V8 최적화 가이드들은, 하나같이 편한 프로그래밍을 막고, 사
 - [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law)
 
 ## 1. V8 bailout 관련 긴글들
+js 코드 디옵티마이제이션 감지기. V8 마이크로 옵티마이제이션에 있어 필수도구다.
+
+- **[IRHydra<sup>2</sup>](http://mrale.ph/irhydra/2/)**
+
 특정 자바스크립트 코드는, V8의 코드 최적화를 막는다. 그런 코딩만 하지 않아도
 자바스크립트 실행속도가 빨라진다. 이하는 그런 "피해야 할 코딩" 리스트
 
