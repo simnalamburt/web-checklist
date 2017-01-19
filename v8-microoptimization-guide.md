@@ -8,13 +8,13 @@ V8 최적화 관련해서 흥미로운 자료가 많았다. 당장은 그렇게�
 작성된 것이긴 하지만, js 런타임들 작동원리가 대부분 큰 차이가 없기때문에 대부분의
 js 런타임에도 공통적으로 적용되는 가이드들이 많다.
 
-## 0. 마이크로최적화 하지 마라
+### 마이크로 최적화가 정말 필요한가?
 React가 빠른 이유는 VDOM Reconciliation 알고리즘 덕분이다. 리액트 이후에 나온
 다른 VDOM 라이브러리들이나 Inferno가 더 빠른 이유도, keyed children sorting
 알고리즘이 더 빨라서 그렇다. 당신의 코드 또한, 알고리즘으로 개선될 여지가
 있을것이다.
 
-- [Reconciliation](https://facebook.github.io/react/docs/reconciliation.html)
+- [Reconciliation - React](https://facebook.github.io/react/docs/reconciliation.html)
 - [ivi@0f6694e2, `src/vdom/implementation.ts`, Line 1503](https://github.com/ivijs/ivi/blob/0f6694e266199e874e0b4297d049a273543ae082/src/vdom/implementation.ts#L1503)
 
 V8 최적화 가이드들은, 하나같이 편한 프로그래밍을 막고, 사람이 읽기 힘든 코드를
@@ -24,11 +24,45 @@ V8 최적화 가이드들은, 하나같이 편한 프로그래밍을 막고, 사
 
 - [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law)
 
+<br>
+
+## 0. 기본적인 마이크로 옵티마이제이션 하는법
+Node.js에 특이한 옵션을 줘서 실행시키면, 실행 도중 어느 코드가 어디서 최적화되고
+어떻게 deoptimize되는지 결과를 출력할 수 있다.
+
+```bash
+node --trace-hydrogen --trace-phase=Z --trace-deopt \
+  --code-comments --hydrogen-track-positions --redirect-code-traces \
+  --redirect-code-traces-to=code.asm utf8-opt.js
+```
+
+위의 커맨드를 실행시키고 나면, `code.asm`과 `hydrogen-*****-1.cfg`파일 두개가
+생기는데, 이 파일을 아래의 프로그램에 집어넣어준다.
+
+### **[IRHydra<sup>2</sup>](http://mrale.ph/irhydra/2/)**
+
+<p align=center>
+  <img src="img/load-button.png" alt="
+    컴파일 결과물 로드버튼은, IRHydra2 웹페이지 최상단 맨 왼쪽에 "Load
+    Compilation Artifacts"라는 이름으로 자리잡고있다.
+  ">
+  <br>
+  <em>버튼이 찾기 힘든곳에 자리잡고있다</em>
+</p>
+
+그러면 아래와 같이 어떤 코드가 어떻게 인라이닝 되고, 어떤 코드가 어떤
+deoptimization 위험이 있는지 한눈에 보이게된다.
+
+<p align=center>
+  <img width=450 alt="IR 그래프" src="img/graph.png">
+</p>
+<p align=center>
+  <img width=600 alt="소스코드 최적화 여부 한눈에 보기" src="img/source.png">
+</p>
+
+<br>
+
 ## 1. V8 bailout 관련 긴글들
-js 코드 디옵티마이제이션 감지기. V8 마이크로 옵티마이제이션에 있어 필수도구다.
-
-- **[IRHydra<sup>2</sup>](http://mrale.ph/irhydra/2/)**
-
 특정 자바스크립트 코드는, V8의 코드 최적화를 막는다. 그런 코딩만 하지 않아도
 자바스크립트 실행속도가 빨라진다. 이하는 그런 "피해야 할 코딩" 리스트
 
@@ -55,6 +89,8 @@ js 코드 디옵티마이제이션 감지기. V8 마이크로 옵티마이제이
 
 - [a closer look at crankshaft, v8's optimizing compiler](https://wingolog.org/archives/2011/08/02/a-closer-look-at-crankshaft-v8s-optimizing-compiler)
 - [A tour of V8: Crankshaft, the optimizing compiler](http://jayconrod.com/posts/54/a-tour-of-v8-crankshaft-the-optimizing-compiler)
+
+<br>
 
 ## 2. Inferno 사례연구
 Inferno 개발자의 인터뷰를 읽어보니, 자주 쓰일만한 팁이 짧게 잘 요약되어있었다.
@@ -95,6 +131,8 @@ Deoptimization이 발생하지 않았는지 검사하는 툴들이 있으니 활
 Inferno는 몇몇 DOM 이벤트들에 대해, 브라우저가 제공하는 이벤트 기능을 쓰지 않고
 자체적인 이벤트시스템을 구현하여 사용하였다. 이걸로 메모리/성능 향상을 얻을 수
 있었다.
+
+<br>
 
 ## 3. 그 외 기타 글들
 크롬 내부에는 여러 종류의 컴파일러들이 같이 들어있고, 그중에 자주 실행되는 몇몇
