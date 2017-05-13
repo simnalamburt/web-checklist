@@ -6,6 +6,20 @@ Web Checklist
 
 <br>
 
+-   [SSL Server Test](https://www.ssllabs.com/ssltest) - *Qualys SSL Labs*<br>
+    [SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) - *Mozilla*
+
+    웹서버 HTTPS 세팅이 똑바로 되어있는지 확인합니다. 점수 규칙이 실용적이지
+    못하기때문에, 만점을 받는것보단 **A+**를 내는것에 초점을 맞추셔야 합니다.
+
+    그리고 테스트 결과와 별개로 [HPKP]도 활성화시키면 더욱 안전해집니다.
+
+[HPKP]: https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
+
+-   [gixy](https://github.com/yandex/gixy)
+
+    Nginx 설정에 실수가 없는지 검사해주는 정적분석기입니다.
+
 -   [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights) - *Google*
 
     웹서버 속도를 테스트해줍니다. 최적화하는 방법도 같이 알려주기때문에
@@ -21,16 +35,6 @@ Web Checklist
 
     PageSpeed와 비슷하게 웹서버 성능을 테스트해줍니다. 보다 여러 항목 (First
     Byte Time, Compress Image, ...) 에 대해 정성적인 결과를 내줍니다.
-
--   [SSL Server Test](https://www.ssllabs.com/ssltest) - *Qualys SSL Labs*<br>
-    [SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) - *Mozilla*
-
-    웹서버 HTTPS 세팅이 똑바로 되어있는지 확인합니다. 점수 규칙이 실용적이지
-    못하기때문에, 만점을 받는것보단 **A+**를 내는것에 초점을 맞추셔야 합니다.
-
-    그리고 테스트 결과와 별개로 [HPKP]도 활성화시키면 더욱 안전해집니다.
-
-[HPKP]: https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
 
 -   [Markup Validation](https://validator.w3.org) - *W3C*
 
