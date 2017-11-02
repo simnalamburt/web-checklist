@@ -6,6 +6,11 @@ Web Checklist
 
 <br>
 
+-   [sonar](https://sonarwhal.com/scanner/) - Microsoft Edge Team
+
+    웹 접근성, 상호운용성, 성능, PWA, 보안 등 여러가지 측면을 동시에
+    검사해줍니다.
+
 -   [SSL Server Test](https://www.ssllabs.com/ssltest) - *Qualys SSL Labs*<br>
     [SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) - *Mozilla*
 
