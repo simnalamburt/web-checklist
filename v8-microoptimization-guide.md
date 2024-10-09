@@ -1,5 +1,13 @@
 V8 마이크로 최적화 가이드
 ========
+2017-01-19
+
+&nbsp;
+
+> _**WARNING**: This article is seriously outdated._
+
+&nbsp;
+
 V8 최적화 관련해서 흥미로운 자료가 많았다. 당장은 그렇게까지 최적화를 하는
 코딩을 할 일은 없지만, 나중을 위해 링크를 모아둔다.
 
@@ -24,7 +32,7 @@ V8 최적화 가이드들은, 하나같이 편한 프로그래밍을 막고, 사
 
 - [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law)
 
-<br>
+&nbsp;
 
 ## 0. 기본적인 마이크로 옵티마이제이션 하는법
 Node.js에 특이한 옵션을 줘서 실행시키면, 실행 도중 어느 코드가 어디서 최적화되고
@@ -41,26 +49,17 @@ node --trace-hydrogen --trace-phase=Z --trace-deopt \
 
 ### **[IRHydra<sup>2</sup>](http://mrale.ph/irhydra/2/)**
 
-<p align=center>
-  <img src="img/load-button.png" alt="
-    컴파일 결과물 로드버튼은, IRHydra2 웹페이지 최상단 맨 왼쪽에 "Load
-    Compilation Artifacts"라는 이름으로 자리잡고있다.
-  ">
-  <br>
-  <em>버튼이 찾기 힘든곳에 자리잡고있다</em>
-</p>
+![컴파일 결과물 로드버튼은, IRHydra2 웹페이지 최상단 맨 왼쪽에 "Load Compilation Artifacts"라는 이름으로 자리잡고있다.](img/load-button.png) \
+*(버튼이 찾기 힘든곳에 자리잡고있다)*
 
 그러면 아래와 같이 어떤 코드가 어떻게 인라이닝 되고, 어떤 코드가 어떤
 deoptimization 위험이 있는지 한눈에 보이게된다.
 
-<p align=center>
-  <img width=450 alt="IR 그래프" src="img/graph.png">
-</p>
-<p align=center>
-  <img width=600 alt="소스코드 최적화 여부 한눈에 보기" src="img/source.png">
-</p>
+![IR graph](img/graph.png)
 
-<br>
+![소스코드 최적화 여부 한눈에 보기](img/source.png)
+
+&nbsp;
 
 ## 1. V8 bailout 관련 긴글들
 특정 자바스크립트 코드는, V8의 코드 최적화를 막는다. 그런 코딩만 하지 않아도
@@ -90,7 +89,7 @@ deoptimization 위험이 있는지 한눈에 보이게된다.
 - [a closer look at crankshaft, v8's optimizing compiler](https://wingolog.org/archives/2011/08/02/a-closer-look-at-crankshaft-v8s-optimizing-compiler)
 - [A tour of V8: Crankshaft, the optimizing compiler](http://jayconrod.com/posts/54/a-tour-of-v8-crankshaft-the-optimizing-compiler)
 
-<br>
+&nbsp;
 
 ## 2. Inferno 사례연구
 Inferno 개발자의 인터뷰를 읽어보니, 자주 쓰일만한 팁이 짧게 잘 요약되어있었다.
@@ -132,7 +131,7 @@ Inferno는 몇몇 DOM 이벤트들에 대해, 브라우저가 제공하는 이�
 자체적인 이벤트시스템을 구현하여 사용하였다. 이걸로 메모리/성능 향상을 얻을 수
 있었다.
 
-<br>
+&nbsp;
 
 ## 3. 그 외 기타 글들
 크롬 내부에는 여러 종류의 컴파일러들이 같이 들어있고, 그중에 자주 실행되는 몇몇
